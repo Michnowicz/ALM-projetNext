@@ -1,0 +1,64 @@
+
+
+.navBar {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logoDiv {
+    display: flex;
+    align-items: center;
+}
+
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.links a {
+    text-decoration: none !important;
+    font-weight: 500;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navigation .svg {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.user {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    background-color: #b4b4b4;
+    border-radius: 25px;
+    gap: 12px;
+    cursor: pointer;
+}
+.user .avatar {
+    height: 35px;
+    aspect-ratio: 1/1;
+    background-color: rgb(37, 37, 37);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.user p {
+    font-weight: 500;
+}
+
