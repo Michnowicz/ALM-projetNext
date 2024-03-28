@@ -29,7 +29,7 @@ export default function Login() {
             <div className="logDiv">
                 <div className="LogInDiv">
                     <h1>Login</h1>
-                    <div className="">
+                    <div className="LogInputs">
                         <input 
                             type="text" 
                             placeholder="username" 
