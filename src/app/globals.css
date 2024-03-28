@@ -3,14 +3,36 @@ body, h1, h2, h3, p, hr, a {
   color: #223548;
 }
 
+a {
+  text-decoration: none;
+}
+
+
 .bgGrey {
   width: 100vw;
-  padding: 10%;
+  /* padding: 10%; */
   box-sizing: border-box;
   background-color: #F5F6F7;
 }
 
-.triangle {
-  position: relative;
-  top: 2px;
+
+
+.pillInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 20px;
+  border: 2px solid #223548;
+  color: #223548;
+}
+
+.btnBlue {
+  width: 100%;
+  background-color: #223548;
+  border: none;
+  padding: 8px;
+  border-radius: 25px;
+  color: white !important;
+  font-weight: 500px;
+  cursor: pointer;
 }

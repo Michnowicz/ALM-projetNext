@@ -3,10 +3,12 @@
 .navBar {
     width: 100vw;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    z-index: 100;
 }
 
 
@@ -19,7 +21,7 @@
 .navigation {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 100px;
 }
 .links {
     display: flex;
@@ -35,9 +37,9 @@
     align-items: center;
     gap: 20px;
 }
-.navigation .svg {
+.navigation svg {
     cursor: pointer;
-    font-size: 1.2rem;
+    height: 20px;
 }
 .user {
     display: flex;
@@ -58,7 +60,17 @@
     align-items: center;
     color: white;
 }
+.user .avatar svg {
+    height: 20px;
+}
 .user p {
     font-weight: 500;
 }
-
+.triangle {
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+.triangle svg {
+    height: 12px;
+}
