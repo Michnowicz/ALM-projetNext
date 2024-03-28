@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 .logBreak hr {
     width: 100%;
@@ -65,7 +65,4 @@
     width: 100%;
     display: flex;
     justify-content: center;
-}
-.logBtn {
-    width: 100%;
 }

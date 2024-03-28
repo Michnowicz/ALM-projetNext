@@ -20,10 +20,14 @@ a {
 .pillInput {
   width: 100%;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 8px 16px;
   border-radius: 20px;
-  border: 2px solid #223548;
+  border: 2px solid #223548b9;
   color: #223548;
+}
+.pillInput:focus {
+  outline: none;
+  border: 2px solid #223548;
 }
 
 .btnBlue {
@@ -35,4 +39,10 @@ a {
   color: white !important;
   font-weight: 500px;
   cursor: pointer;
+}
+.btnBlue:focus {
+  outline: 1px solid #b6c7da
+}
+.btnBlue:active {
+  background-color: #284354;
 }
