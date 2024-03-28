@@ -1,11 +1,17 @@
+'use client'
+
 import "./Navbar.css"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping,faStar,faCaretUp,faUser } from "@fortawesome/free-solid-svg-icons"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function Navbar() {
-
+    const login = useSelector((state) => state.login)
+    const dispatch = useDispatch()
+    const router = useRouter()
 
     return(
         <nav className="navBar">
@@ -18,17 +24,28 @@ export default function Navbar() {
                     <Link href="/products">PRODUCTS</Link>
                     <Link href="/login">LOGIN</Link>
                 </div>
-                <div className="icons">
-                    <FontAwesomeIcon icon={faCartShopping} className="icon"/>
-                    <FontAwesomeIcon icon={faStar} className="icon"/>
-                    <div className="user">
-                        <div className="avatar">
-                            <FontAwesomeIcon icon={faUser}/>
+                {
+                    login.logged ?
+                    <div className="icons">
+                        <Link href='/cart'><FontAwesomeIcon icon={faCartShopping} className="icon"/></Link>
+                        <Link href='/favorite'><FontAwesomeIcon icon={faStar} className="icon"/></Link>
+                        <div className="user">
+                            <div className="avatar">
+                                <FontAwesomeIcon icon={faUser}/>
+                            </div>
+                            <p>{login.connectedUser.name}</p>
+                            <div className="triangle"><FontAwesomeIcon icon={faCaretUp}/></div>
                         </div>
-                        <p>username</p>
-                        <div className="triangle"><FontAwesomeIcon icon={faCaretUp}/></div>
                     </div>
-                </div>
+                    :
+                    <div className="logedOffIcons">
+                        <div className="user">
+                            <div className="avatar">
+                                <FontAwesomeIcon icon={faUser}/>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </nav>
     )

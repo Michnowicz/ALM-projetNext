@@ -7,10 +7,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 80px;
     box-sizing: border-box;
 }
 .logDiv {
+    height: 400px;
     background-color: white;
     padding: 50px;
     border-radius: 20px;
@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    box-shadow: 1px 1px 5px #e7e9eb;
 }
 
 
@@ -61,8 +62,11 @@
 
 
 
-.subscription {
+.registration {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+.registration a {
+    width: 100%;
 }

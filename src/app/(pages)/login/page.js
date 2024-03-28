@@ -3,6 +3,7 @@
 import "./Login.css"
 
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { useSelector, useDispatch } from 'react-redux'
 import { CheckUser } from "../../GlobalRedux/features/login/loginSlice.js"
 import { useState } from "react"
@@ -28,7 +29,7 @@ export default function Login() {
             <div className="logDiv">
                 <div className="LogInDiv">
                     <h1>Login</h1>
-                    <div className="LogInputs">
+                    <div className="">
                         <input 
                             type="text" 
                             placeholder="username" 
@@ -36,7 +37,7 @@ export default function Login() {
                             onChange={(e)=>(setUsername(e.target.value))}
                         />
                         <input 
-                            type="text" 
+                            type="password" 
                             placeholder="password" 
                             className="pillInput"
                             onChange={(e)=>(setPassword(e.target.value))}
@@ -51,8 +52,8 @@ export default function Login() {
                     <p>or</p>
                     <hr />
                 </div>
-                <div className="subscription">
-                    <button className="btnBlue">Create Account</button>
+                <div className="registration">
+                    <Link href='/login/registration'><button className="btnBlue">Create Account</button></Link>
                 </div>
             </div>
         </section>

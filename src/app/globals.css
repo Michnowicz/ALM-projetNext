@@ -7,6 +7,9 @@ a {
   text-decoration: none;
 }
 
+section {
+  padding-top: 80px;
+}
 
 .bgGrey {
   width: 100vw;
@@ -18,11 +21,11 @@ a {
 
 
 .pillInput {
-  width: 100%;
+  width: 200px;
   box-sizing: border-box;
   padding: 8px 16px;
   border-radius: 20px;
-  border: 2px solid #223548b9;
+  border: 2px solid #2235486c;
   color: #223548;
 }
 .pillInput:focus {
