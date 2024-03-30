@@ -14,7 +14,6 @@ export default function List() {
     const search = useSelector((state)=> state.search)
     const dispatch = useDispatch()
     const router = useRouter()
-    const [filtered, setFiltered] = useState([])
 
     
     useEffect(()=>{ //API parameters
@@ -50,11 +49,11 @@ export default function List() {
     }, [data.accesToken])
 
 
-    useEffect(()=>{
-        if (data.playlist != "") {
-            console.log(data.playlist);
-        }
-    },[data.playlist])
+    // useEffect(()=>{
+    //     if (data.playlist != "") {
+    //         console.log(data.playlist);
+    //     }
+    // },[data.playlist])
 
 
     function handleID(id) {  //change page by clicking on card

@@ -1,0 +1,29 @@
+.productSongs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.tracklist {
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.track {
+    width: 48%;
+}
+.track hr {
+    border: 1px solid rgba(219, 219, 219, 0.519);
+}
+.trackInfo {
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+.trackInfo p {
+    font-size: 0.925rem;
+}
