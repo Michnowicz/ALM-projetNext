@@ -5,14 +5,21 @@
 .List {
     height: fit-content;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     box-sizing: border-box;
     flex-wrap: wrap;
     gap: 10px;
 }
+.List .load {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
 
 .List .data {
     padding: 10px;
@@ -41,5 +48,6 @@
     text-overflow: ellipsis;
     overflow: hidden;
     text-wrap: nowrap;
-    font-size: 0.925rem;
+    font-size: 0.9rem;
+    color: #666565;
 }

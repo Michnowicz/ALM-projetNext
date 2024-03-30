@@ -5,16 +5,19 @@ import "./List.css"
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { getToken, getPlaylist } from "@/app/GlobalRedux/features/data/dataSlice"
+import { Link } from "next/link"
+import { useRouter } from "next/navigation"
 
 
 export default function List() {
-
     const data = useSelector((state)=> state.data)
+    const search = useSelector((state)=> state.search)
     const dispatch = useDispatch()
+    const router = useRouter()
+    const [filtered, setFiltered] = useState([])
 
-
-    useEffect(()=>{
-        //API parameters
+    
+    useEffect(()=>{ //API parameters
         let authParameters = {
             method: 'POST',
             headers: {
@@ -28,7 +31,7 @@ export default function List() {
             .then(data => dispatch(getToken(data.access_token)))
     },[])
 
-    useEffect(()=>{
+    useEffect(()=>{ //write playlist data in dataSlicer
         if (data.accesToken != "") {
             async function getData() {
                 var artistsParameters = {
@@ -44,8 +47,8 @@ export default function List() {
             }
             getData()
         }
-        console.log(data.playlist);
     }, [data.accesToken])
+
 
     useEffect(()=>{
         if (data.playlist != "") {
@@ -53,18 +56,23 @@ export default function List() {
         }
     },[data.playlist])
 
+
+    function handleID(id) {  //change page by clicking on card
+        router.push(`/products/${id}`)
+    }
+
     return(
         <div className="List">
             {
                 data.playlist == "" ?
-                <p>Loading...</p>
+                <div className="load">Loading...</div>
                 :
-                data.playlist.map((p,i) => (
-                    <div key={i} className="data">
-                        <img src={p.track.album.images[0].url} alt="" />
-                        <p>{p.track.artists[0].name}</p>
-                        <p>{p.track.album.name}</p>
-                    </div>
+                data.playlist.filter(p => p.track.album.name.toLowerCase().includes(search.search)).map((p,i) => (
+                        <div key={i} className="data" onClick={()=>(handleID(p.track.album.id))}>
+                            <img src={p.track.album.images[0].url} alt="" />
+                            <p>{p.track.artists[0].name}</p>
+                            <p>{p.track.album.name}</p>
+                        </div>
                 ))
             }
         </div>

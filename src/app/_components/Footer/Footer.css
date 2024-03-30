@@ -1,0 +1,43 @@
+
+
+
+.Footer {
+    padding: 5%;
+    background-color: white;
+    display: flex;
+    gap: 20px;
+}
+
+.Footer .ftrCont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.Footer .About {
+    width: 40%;
+}
+.Footer .Support {
+    width: 20%;
+}
+.Footer .Links {
+    width: 20%;
+}
+.Footer .Social {
+    width: 20%;
+}
+
+
+.ftrCont div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.ftrCont div a{
+    font-size: 0.9rem;
+    color: #666565;
+}
+.ftrCont div p {
+    font-size: 0.9rem;
+    color: #666565;
+}
