@@ -8,6 +8,8 @@ export default function AlbumList() {
     const data = useSelector((state)=> state.data)
     const [albums, setAlbums] = useState([])
 
+    
+
     useEffect(()=>{
         if (data.accesToken != "") {
             async function getData() {
@@ -25,7 +27,7 @@ export default function AlbumList() {
             }
             getData()
         }
-    },[data.accesToken])
+    },[data.accesToken, data.album])
 
     useEffect(()=>{
         console.log(albums);

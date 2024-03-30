@@ -41,3 +41,12 @@
     font-size: 0.9rem;
     color: #666565;
 }
+
+.socialIcon {
+    display: flex;
+    flex-direction: row !important;
+    gap: 12px !important;
+}
+.socialIcon svg {
+    height: 1.2rem;
+}
