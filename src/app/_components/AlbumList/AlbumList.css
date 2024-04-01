@@ -9,22 +9,27 @@
     display: flex;
     flex-wrap: wrap;
     /* justify-content: center; */
-    gap: 20px;
+    gap: 10px;
 }
 
 .album {
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     overflow: hidden;
-    width: 150px;
+    background-color: #dfe1e2;
+    display: flex;
+    width: 30%;
+    align-items: flex-end;
 }
 .album:hover {
     background-color: #dfe1e2;
 }
 
 .album img {
-    width: 150px;
-    height: 150px;
+    /* width: 150px;
+    height: 150px; */
+    width: 64px;
+    height: 64px;
     border-radius: 10px;
 }
 
@@ -32,6 +37,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-wrap: nowrap;
-    align-self: flex-start;
     font-size: 0.925rem;
+    padding: 8px;
 }

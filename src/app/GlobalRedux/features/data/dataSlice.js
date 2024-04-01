@@ -10,6 +10,7 @@ export const dataSlice = createSlice ({
         accesToken : "",
         playlist:[],
         album:[],
+        carousel: []
     },
     reducers: {
         getToken: (state, action) => {
@@ -21,9 +22,18 @@ export const dataSlice = createSlice ({
         getAlbum: (state, action) => {
             state.album = action.payload
         },
+        getCarousel: (state) => {
+            const randList = []
+
+            while (state.carousel.length < 5) {
+                let random = Math.floor(Math.random()*state.playlist.length)
+                let different = true
+                state.carousel.push(state.playlist[random])
+            }
+        }
     }
 })
 
 
-export const {getToken,getPlaylist,getAlbum, } = dataSlice.actions
+export const {getToken,getPlaylist,getAlbum, getCarousel } = dataSlice.actions
 export default dataSlice.reducer

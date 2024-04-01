@@ -29,9 +29,9 @@ export default function AlbumList() {
         }
     },[data.accesToken, data.album])
 
-    useEffect(()=>{
-        console.log(albums);
-    },[albums])
+    // useEffect(()=>{
+    //     console.log(albums);
+    // },[albums])
 
     return(
         <div className="AlbumList">

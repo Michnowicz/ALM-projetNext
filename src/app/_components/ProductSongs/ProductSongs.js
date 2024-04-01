@@ -15,10 +15,15 @@ export default function ProductSongs() {
                             {
                                 album.tracks.items.map((t,i)=>(
                                     <div key={i} className="track">
-                                        <div className="trackInfo">
-                                            <p>{i+1}.</p>
-                                            <p>{t.name}</p>
-                                        </div>
+                                        {
+                                            i <= 19 ?
+                                            <div className="trackInfo">
+                                                <p>{i+1}.</p>
+                                                <p>{t.name}</p>
+                                            </div>
+                                            :
+                                            ""
+                                        }
                                     </div>
                                 ))
                             }

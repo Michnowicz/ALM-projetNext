@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     gap: 10px;
 }
-.List .load {
+.load {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -21,7 +21,7 @@
 
 }
 
-.List .data {
+.data {
     padding: 10px;
     border-radius: 10px;
     width: 170px;
@@ -29,22 +29,22 @@
     cursor: pointer;
     overflow: hidden;
 }
-.List .data:hover {
+.data:hover {
     background-color: #dfe1e2;
 }
-.List .data img {
+.data img {
     width: 170px;
     height: 170px;
     border-radius: 10px;
 }
-.List .data p:nth-of-type(1) {
+.data p:nth-of-type(1) {
     text-overflow: ellipsis;
     overflow: hidden;
     text-wrap: nowrap;
     font-weight: 600;
     color: black;
 }
-.List .data p:nth-of-type(2) {
+.data p:nth-of-type(2) {
     text-overflow: ellipsis;
     overflow: hidden;
     text-wrap: nowrap;

@@ -1,6 +1,8 @@
 'use client'
 
-import "./List.css"
+
+import "../List/List.css"
+import "./PopularAlbum.css"
 
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
@@ -9,9 +11,8 @@ import { Link } from "next/link"
 import { useRouter } from "next/navigation"
 
 
-export default function List() {
+export default function PopularAlbum() {
     const data = useSelector((state)=> state.data)
-    const search = useSelector((state)=> state.search)
     const dispatch = useDispatch()
     const router = useRouter()
 
@@ -49,11 +50,11 @@ export default function List() {
     }, [data.accesToken])
 
 
-    useEffect(()=>{
-        if (data.playlist != "") {
-            console.log(data.playlist);
-        }
-    },[data.playlist])
+    // useEffect(()=>{
+    //     if (data.playlist != "") {
+    //         console.log(data.playlist);
+    //     }
+    // },[data.playlist])
 
 
     function handleID(id) {  //change page by clicking on card
@@ -61,19 +62,26 @@ export default function List() {
     }
 
     return(
-        <div className="List">
-            {
-                data.playlist == "" ?
-                <div className="load">Loading...</div>
-                :
-                data.playlist.filter(p => p.track.album.name.toLowerCase().includes(search.search)).map((p,i) => (
-                        <div key={i} className="data" onClick={()=>(handleID(p.track.album.id))}>
-                            <img src={p.track.album.images[0].url} alt="" />
-                            <p>{p.track.artists[0].name}</p>
-                            <p>{p.track.album.name}</p>
-                        </div>
-                ))
-            }
+        <div className="PopularAlbum">
+            <h2>Most Popular Album</h2>
+            <div className="allData">
+                {
+                    data.playlist == "" ?
+                    <div className="load">Loading...</div>
+                    :
+                    data.playlist.filter(p=>p.track.popularity > 60).map((p,i) => (
+                            i < 5 ?
+                            <div key={i} className="data" onClick={()=>(handleID(p.track.album.id))}>
+                                <img src={p.track.album.images[0].url} alt="" />
+                                <p>{p.track.artists[0].name}</p>
+                                <p>{p.track.album.name}</p>
+                            </div>
+                            :
+                            ""
+                    ))
+                }
+
+            </div>
         </div>
     )
 }

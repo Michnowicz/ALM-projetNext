@@ -20,10 +20,13 @@
 .trackInfo {
     display: flex;
     gap: 8px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
 }
 .trackInfo p {
     font-size: 0.925rem;
+}
+.trackInfo p:last-of-type {
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    text-wrap: nowrap;
 }
