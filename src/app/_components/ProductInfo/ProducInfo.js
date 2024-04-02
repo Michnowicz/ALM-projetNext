@@ -1,11 +1,18 @@
 import "./ProductInfo.css"
 
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping,faStar } from "@fortawesome/free-solid-svg-icons"
+import { addToCart } from "@/app/GlobalRedux/features/login/loginSlice"
 
 export default function ProductInfo() {
     const album = useSelector((state)=> state.data.album)
+    const dispatch = useDispatch()
+
+    function handleCart() {
+       // console.log(album);
+        dispatch(addToCart(album))
+    }
 
     return(
         <div className="productInfo">
@@ -18,7 +25,7 @@ export default function ProductInfo() {
                 <p><b>Label : </b>{album.label}</p>
                 <p><b>Release : </b>{album.release_date}</p>
                 <div className="productIcons">
-                    <FontAwesomeIcon icon={faCartShopping} className="icon"/>
+                    <FontAwesomeIcon icon={faCartShopping} className="icon" onClick={handleCart}/>
                     <FontAwesomeIcon icon={faStar} className="icon"/>
                 </div>
             </div>

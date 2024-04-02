@@ -30,7 +30,8 @@ export const dataSlice = createSlice ({
                 let different = true
                 state.carousel.push(state.playlist[random])
             }
-        }
+        },
+        
     }
 })
 

@@ -24,6 +24,11 @@ export default function Navbar() {
                     <Link href="/products">PRODUCTS</Link>
                     <Link href="/login">LOGIN</Link>
                 </div>
+
+                {/* to test favorite and cart */}
+                <Link href='/cart'><FontAwesomeIcon icon={faCartShopping} className="icon"/></Link>
+                <Link href='/favorite'><FontAwesomeIcon icon={faStar} className="icon"/></Link>
+
                 {
                     login.logged ?
                     <div className="icons">
