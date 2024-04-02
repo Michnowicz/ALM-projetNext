@@ -30,10 +30,15 @@ export default function ProductInfo() {
                 <p><b>Artist : </b>{album.artists[0].name}</p>
                 <p><b>Label : </b>{album.label}</p>
                 <p><b>Release : </b>{album.release_date}</p>
-                <div className="productIcons">
-                    <FontAwesomeIcon icon={faCartShopping} className="icon" onClick={handleCart}/>
-                    <FontAwesomeIcon icon={faStar} className="icon"/>
-                </div>
+                {
+                    login.logged ?
+                    <div className="productIcons">
+                        <FontAwesomeIcon icon={faCartShopping} className="icon" onClick={handleCart}/>
+                        <FontAwesomeIcon icon={faStar} className="icon"/>
+                    </div>
+                    :
+                    <></>
+                }
             </div>
         </div>
     )

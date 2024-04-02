@@ -11,24 +11,25 @@ import { useEffect } from "react"
 
 export default function CartProducts() {
     const test = useSelector((state)=> state.login.test)
+    const cart = useSelector((state)=> state.login.connectedUser.cart)
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        console.log(test);
-    },[test])
+        console.log(cart);
+    },[cart])
 
     return(
         <div className="cartProducts">
         {
-            test.map((t,i)=>(
+            cart.map((c,i)=>(
             <div key={i} className="cartProduct">
                 <div className="cartInfo">
                     <div className="cartLeft">
-                        <img src={t.object.images[0].url} alt="" />
+                        <img src={c.object.images[0].url} alt="" />
                         <div className="cartText">
-                            <h3>{t.object.name}</h3>
-                            <p>{t.object.artists[0].name}</p>
-                            <p><b>quantity: </b>{t.quantity}</p>
+                            <h3>{c.object.name}</h3>
+                            <p>{c.object.artists[0].name}</p>
+                            <p><b>quantity: </b>{c.quantity}</p>
                         </div>
                     </div>
                     <div className="cartBtn">

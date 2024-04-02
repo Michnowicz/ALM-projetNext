@@ -7,8 +7,16 @@ import { createSlice } from "@reduxjs/toolkit"
 export const loginSlice = createSlice ({
     name: "login",
     initialState: {
-        logged: false,
-        connectedUser:{id:null, name: "", password: "", favorite: [], cart: []},
+        //logged: false,
+        logged: true,
+        //connectedUser:{id:null, name: "", password: "", favorite: [], cart: []},
+        connectedUser:{id:null, name: "", password: "", favorite: [], cart: [
+            {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{url:"https://i.scdn.co/image/ab67616d0000485181fccd758776d16b87721b17"}],}, quantity: 6},
+
+            {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{url:"https://i.scdn.co/image/ab67616d000048512a53db5b9ceb3a0d5830fb3c"}],}, quantity: 4},
+            
+            {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{url:"https://i.scdn.co/image/ab67616d00004851b36949bee43217351961ffbc"}],}, quantity: 3},
+        ]},
         users:[
             {id:0, name:"dummy", password: "test", favorite: [], cart: []},
         ],
@@ -66,9 +74,9 @@ export const loginSlice = createSlice ({
             if (state.connectedUser.cart.length == 0) {
                 state.connectedUser.cart.push(newProduct)
             } else {
-                state.connectedUser.cart.forEach(f => {
-                    if (f.object.artists[0].id == newProduct.object.artists[0].id) {
-                        f.quantity += newProduct.quantity
+                state.connectedUser.cart.forEach(c => {
+                    if (c.object.name == newProduct.object.name) {
+                        c.quantity += newProduct.quantity
                         writeProduct = false
                     }
                 })
@@ -78,18 +86,18 @@ export const loginSlice = createSlice ({
             }
         },
         incrementCart: (state, action) => {
-            state.test[action.payload].quantity += 1
+            state.connectedUser.cart[action.payload].quantity += 1
         },
         decrementCart: (state, action) => {
-            if (state.test[action.payload].quantity > 0) {
-                state.test[action.payload].quantity -= 1
+            if (state.connectedUser.cart[action.payload].quantity > 0) {
+                state.connectedUser.cart[action.payload].quantity -= 1
             }
-            if (state.test[action.payload].quantity == 0) {
-                state.test.splice(action.payload, 1)
+            if (state.connectedUser.cart[action.payload].quantity == 0) {
+                state.connectedUser.cart.splice(action.payload, 1)
             }
         },
         deleteCart:(state, action) => {
-            state.test.splice(action.payload, 1)
+            state.connectedUser.cart.splice(action.payload, 1)
         },
     }
 })
