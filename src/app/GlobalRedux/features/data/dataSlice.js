@@ -28,7 +28,21 @@ export const dataSlice = createSlice ({
             while (state.carousel.length < 5) {
                 let random = Math.floor(Math.random()*state.playlist.length)
                 let different = true
-                state.carousel.push(state.playlist[random])
+
+                if (state.carousel.length==0) {
+                    randList.push(random)
+                    state.carousel.push(state.playlist[random])
+                } else {
+                    randList.forEach(r =>{
+                        if (r == random) {
+                            different = false
+                        }
+                    })
+                    if (different == true) {
+                        randList.push(random)
+                        state.carousel.push(state.playlist[random])
+                    }
+                }
             }
         },
         
