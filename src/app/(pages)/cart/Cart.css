@@ -1,0 +1,20 @@
+
+
+
+.Cart {
+    padding: 5%;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartDiv {
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    height: fit-content;
+    border-radius: 20px;
+    gap: 20px;
+    box-shadow: 1px 1px 5px #e7e9eb;
+}

@@ -2,11 +2,14 @@
 import "./Cart.css"
 import { useSelector, useDispatch } from "react-redux"
 import { getToken, getPlaylist } from "@/app/GlobalRedux/features/data/dataSlice"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function Cart() {
     const data = useSelector((state)=> state.data)
+    const test = useSelector((state)=> state.login.test)
     const dispatch = useDispatch()
+
+    const [cartData , setCartData] =useState([])
 
     useEffect(()=>{ //API parameters
         let authParameters = {
@@ -23,7 +26,7 @@ export default function Cart() {
     },[])
 
     useEffect(()=>{ //write playlist data in dataSlicer
-        if (data.accesToken != "" && data == "") {
+        if (data.accesToken != "" && data.playlist == "") {
             async function getData() {
                 var artistsParameters = {
                     method: 'GET',
@@ -41,13 +44,22 @@ export default function Cart() {
     }, [data.accesToken])
 
     useEffect(()=>{
-        console.log(data.playlist);
+        if (data.playlist != "") {
+            console.log(data.playlist);
+            console.log(test)
+        }
     },[data.playlist])
 
 
     return(
         <section className="Cart">
-            
+            <div className="cartDiv">
+                <div className="cartProducts">
+                </div>
+                <div className="summary">
+
+                </div>
+            </div>
         </section>
     )
 }

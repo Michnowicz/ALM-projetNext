@@ -4,15 +4,21 @@ import { useSelector, useDispatch } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping,faStar } from "@fortawesome/free-solid-svg-icons"
 import { addToCart } from "@/app/GlobalRedux/features/login/loginSlice"
+import { useEffect } from "react"
 
 export default function ProductInfo() {
+    const login = useSelector((state)=> state.login)
     const album = useSelector((state)=> state.data.album)
     const dispatch = useDispatch()
 
     function handleCart() {
-       // console.log(album);
+        console.log(album);
         dispatch(addToCart(album))
     }
+
+    useEffect(()=>{
+        console.log(login.connectedUser);
+    },[login.connectedUser])
 
     return(
         <div className="productInfo">

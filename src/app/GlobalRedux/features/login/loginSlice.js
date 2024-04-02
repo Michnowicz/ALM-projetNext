@@ -15,10 +15,11 @@ export const loginSlice = createSlice ({
 
         // to test favorite and cart
         test: [
-            {id: "1U1el3k54VvEUzo3ybLPlM", quantity: 6},
-            {id: "2Cdo72vcitFAvuxz76r82c", quantity: 4},
-            {id: "5OZ44LaqZbpP3m9B3oT8br", quantity: 3},
-            {id: "6oWve17aH3k9i9ITcL1cU5", quantity: 2}
+            {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{}],}, quantity: 6},
+
+            {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{}],}, quantity: 4},
+            
+            {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{}],}, quantity: 3},
         ],
     },
     reducers: {
@@ -59,14 +60,14 @@ export const loginSlice = createSlice ({
             }
         },
         addToCart: (state, action) => {
-            const newProduct = {id: action.payload.artists[0].id, quantity: 1}
+            const newProduct = {object: action.payload, quantity: 1}
             let writeProduct = true
 
             if (state.connectedUser.cart.length == 0) {
                 state.connectedUser.cart.push(newProduct)
             } else {
                 state.connectedUser.cart.forEach(f => {
-                    if (f.id == newProduct.id) {
+                    if (f.object.artists[0].id == newProduct.object.artists[0].id) {
                         f.quantity += newProduct.quantity
                         writeProduct = false
                     }
