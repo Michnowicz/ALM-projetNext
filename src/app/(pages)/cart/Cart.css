@@ -8,13 +8,25 @@
     align-items: center;
     justify-content: center;
 }
-
 .cartDiv {
     background-color: white;
-    padding: 20px;
-    width: 80%;
+    padding: 30px;
+    width: 90%;
     height: fit-content;
     border-radius: 20px;
-    gap: 20px;
+    gap: 10px;
     box-shadow: 1px 1px 5px #e7e9eb;
+    display: flex;
 }
+
+.cartDiv hr {
+    border: 1px solid rgba(219, 219, 219, 0.519);
+}
+
+
+
+
+
+
+
+

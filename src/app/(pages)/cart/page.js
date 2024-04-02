@@ -1,5 +1,8 @@
 'use client'
 import "./Cart.css"
+import CartProducts from "@/app/_components/CartProducts/CartProducts"
+import Summary from "@/app/_components/Summary/Summary"
+
 import { useSelector, useDispatch } from "react-redux"
 import { getToken, getPlaylist } from "@/app/GlobalRedux/features/data/dataSlice"
 import { useEffect, useState } from "react"
@@ -9,7 +12,6 @@ export default function Cart() {
     const test = useSelector((state)=> state.login.test)
     const dispatch = useDispatch()
 
-    const [cartData , setCartData] =useState([])
 
     useEffect(()=>{ //API parameters
         let authParameters = {
@@ -44,21 +46,18 @@ export default function Cart() {
     }, [data.accesToken])
 
     useEffect(()=>{
-        if (data.playlist != "") {
-            console.log(data.playlist);
-            console.log(test)
-        }
-    },[data.playlist])
+        console.log(test)
+    },[])
 
 
     return(
         <section className="Cart">
             <div className="cartDiv">
-                <div className="cartProducts">
-                </div>
-                <div className="summary">
+                <CartProducts/>
 
-                </div>
+                <hr />
+                    
+                <Summary/>
             </div>
         </section>
     )

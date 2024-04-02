@@ -1,0 +1,34 @@
+.summary {
+    width: 25%;
+    padding: 10px;
+    padding-left: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sumDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sumText {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.sumBtn button {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+    background-color: #223548;
+    cursor: pointer;
+}
+.sumBtn button:active {
+    background-color: #284354;
+}

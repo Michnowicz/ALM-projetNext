@@ -15,11 +15,11 @@ export const loginSlice = createSlice ({
 
         // to test favorite and cart
         test: [
-            {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{}],}, quantity: 6},
+            {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{url:"https://i.scdn.co/image/ab67616d0000485181fccd758776d16b87721b17"}],}, quantity: 6},
 
-            {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{}],}, quantity: 4},
+            {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{url:"https://i.scdn.co/image/ab67616d000048512a53db5b9ceb3a0d5830fb3c"}],}, quantity: 4},
             
-            {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{}],}, quantity: 3},
+            {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{url:"https://i.scdn.co/image/ab67616d00004851b36949bee43217351961ffbc"}],}, quantity: 3},
         ],
     },
     reducers: {
@@ -77,8 +77,22 @@ export const loginSlice = createSlice ({
                 }
             }
         },
+        incrementCart: (state, action) => {
+            state.test[action.payload].quantity += 1
+        },
+        decrementCart: (state, action) => {
+            if (state.test[action.payload].quantity > 0) {
+                state.test[action.payload].quantity -= 1
+            }
+            if (state.test[action.payload].quantity == 0) {
+                state.test.splice(action.payload, 1)
+            }
+        },
+        deleteCart:(state, action) => {
+            state.test.splice(action.payload, 1)
+        },
     }
 })
 
-export const {CheckUser, CreateUser, addToCart} = loginSlice.actions
+export const {CheckUser, CreateUser, addToCart, incrementCart, decrementCart, deleteCart, } = loginSlice.actions
 export default loginSlice.reducer
