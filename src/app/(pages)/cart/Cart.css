@@ -23,10 +23,23 @@
     border: 1px solid rgba(219, 219, 219, 0.519);
 }
 
+.notLoged {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
 
-
-
-
-
-
-
+.notLoged button {
+    background-color: #223548;
+    border: none;
+    padding: 8px 40px 8px 40px;
+    border-radius: 25px;
+    color: white !important;
+    font-weight: 500px;
+    cursor: pointer;
+}
+.btnBlue:focus {
+    outline: 1px solid #b6c7da
+}

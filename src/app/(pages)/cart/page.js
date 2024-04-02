@@ -6,11 +6,15 @@ import Summary from "@/app/_components/Summary/Summary"
 import { useSelector, useDispatch } from "react-redux"
 import { getToken, getPlaylist } from "@/app/GlobalRedux/features/data/dataSlice"
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Cart() {
     const data = useSelector((state)=> state.data)
+    const login = useSelector((state)=> state.login)
     const test = useSelector((state)=> state.login.test)
     const dispatch = useDispatch()
+    const router = useRouter()
+
 
 
     useEffect(()=>{ //API parameters
@@ -45,19 +49,24 @@ export default function Cart() {
         }
     }, [data.accesToken])
 
-    useEffect(()=>{
-        console.log(test)
-    },[])
 
 
     return(
         <section className="Cart">
             <div className="cartDiv">
-                <CartProducts/>
-
-                <hr />
-                    
-                <Summary/>
+                {
+                    login.logged ?
+                    <>
+                        <CartProducts/>
+                        <hr />
+                        <Summary/>
+                    </>
+                    :
+                    <div className="notLoged">
+                        <h1>Please log in to see this page</h1>
+                        <button onClick={()=>(router.push('/login'))}>Login</button>
+                    </div>
+                }
             </div>
         </section>
     )
