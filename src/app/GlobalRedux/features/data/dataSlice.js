@@ -10,7 +10,8 @@ export const dataSlice = createSlice ({
         accesToken : "",
         playlist:[],
         album:[],
-        carousel: []
+        carousel: [],
+        filter: "artist",
     },
     reducers: {
         getToken: (state, action) => {
@@ -50,5 +51,5 @@ export const dataSlice = createSlice ({
 })
 
 
-export const {getToken,getPlaylist,getAlbum, getCarousel } = dataSlice.actions
+export const {getToken,getPlaylist,getAlbum, getCarousel, } = dataSlice.actions
 export default dataSlice.reducer
