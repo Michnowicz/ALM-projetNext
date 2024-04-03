@@ -4,14 +4,11 @@ import "./Navbar.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping,faStar,faCaretUp,faUser } from "@fortawesome/free-solid-svg-icons"
-import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 export default function Navbar() {
     const login = useSelector((state) => state.login)
-    const dispatch = useDispatch()
-    const router = useRouter()
 
     return(
         <nav className="navBar">
@@ -36,6 +33,9 @@ export default function Navbar() {
                             </div>
                             <p>{login.connectedUser.name}</p>
                             <div className="triangle"><FontAwesomeIcon icon={faCaretUp}/></div>
+                            <div className="scrollingMenu">
+                                <button>log out</button>
+                            </div>
                         </div>
                     </div>
                     :

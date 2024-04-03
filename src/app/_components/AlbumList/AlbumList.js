@@ -8,7 +8,6 @@ export default function AlbumList() {
     const data = useSelector((state)=> state.data)
     const [albums, setAlbums] = useState([])
 
-    
 
     useEffect(()=>{
         if (data.accesToken != "") {
@@ -29,9 +28,6 @@ export default function AlbumList() {
         }
     },[data.accesToken, data.album])
 
-    // useEffect(()=>{
-    //     console.log(albums);
-    // },[albums])
 
     return(
         <div className="AlbumList">

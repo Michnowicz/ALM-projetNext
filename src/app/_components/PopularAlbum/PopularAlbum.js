@@ -4,10 +4,9 @@
 import "../List/List.css"
 import "./PopularAlbum.css"
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { getToken, getPlaylist } from "@/app/GlobalRedux/features/data/dataSlice"
-import { Link } from "next/link"
 import { useRouter } from "next/navigation"
 
 
@@ -48,13 +47,6 @@ export default function PopularAlbum() {
             getData()
         }
     }, [data.accesToken])
-
-
-    // useEffect(()=>{
-    //     if (data.playlist != "") {
-    //         console.log(data.playlist);
-    //     }
-    // },[data.playlist])
 
 
     function handleID(id) {  //change page by clicking on card

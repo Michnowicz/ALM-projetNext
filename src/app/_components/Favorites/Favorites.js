@@ -1,17 +1,12 @@
 'use client'
 
-import { useEffect } from "react"
 import "./Favorites.css"
 
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 
 export default function Favorites() {
     const favorite = useSelector((state) => state.login.connectedUser.favorite)
-    const dispatch = useDispatch()
 
-    useEffect(()=>{
-        console.log(favorite);
-    },[favorite])
 
     return(
         <div className="Favorites">

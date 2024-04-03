@@ -2,22 +2,14 @@
 
 import "./List.css"
 
-import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { useRouter } from "next/navigation"
 
 
 export default function List() {
     const data = useSelector((state)=> state.data)
     const search = useSelector((state)=> state.search)
-    const dispatch = useDispatch()
     const router = useRouter()
-
-    // const [filtered, setFiltered] = useState([])
-
-    // useEffect(()=>{
-    //     const newFiltered = data.playlist.filter(p => p.track.artists[0].name.toLowerCase().includes(search.search))
-    // },[search.filter])
 
 
     function handleID(id) {  //change page by clicking on card

@@ -45,13 +45,6 @@ export default function Products() {
         }
     }, [data.accesToken])
 
-
-    useEffect(()=>{
-        if (data.playlist != "") {
-            console.log(data.playlist);
-        }
-    },[data.playlist])
-
     return(
         <div className="Products">
             {

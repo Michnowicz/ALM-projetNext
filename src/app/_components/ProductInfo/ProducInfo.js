@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping,faStar } from "@fortawesome/free-solid-svg-icons"
 import { addToCart, addFavorite } from "@/app/GlobalRedux/features/login/loginSlice"
-import { useEffect } from "react"
 
 export default function ProductInfo() {
     const login = useSelector((state)=> state.login)
@@ -15,9 +14,10 @@ export default function ProductInfo() {
         dispatch(addToCart(album))
     }
 
-    useEffect(()=>{
-        console.log(login.connectedUser);
-    },[login.connectedUser])
+    function handleFavorite(e) {
+        e.target.classList.toggle('gold')
+        dispatch(addFavorite(album))
+    }
 
     return(
         <div className="productInfo">
@@ -33,7 +33,7 @@ export default function ProductInfo() {
                     login.logged ?
                     <div className="productIcons">
                         <FontAwesomeIcon icon={faCartShopping} className="icon" onClick={handleCart}/>
-                        <FontAwesomeIcon icon={faStar} className="icon" onClick={()=>(dispatch(addFavorite(album)))}/>
+                        <FontAwesomeIcon icon={faStar} className="icon" onClick={(e)=>(handleFavorite(e))}/>
                     </div>
                     :
                     <></>

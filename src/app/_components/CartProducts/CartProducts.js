@@ -5,18 +5,13 @@ import "./CartProducts.css"
 import { useSelector,useDispatch } from "react-redux"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faT, faTrash } from "@fortawesome/free-solid-svg-icons"
+import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { incrementCart, decrementCart, deleteCart } from "@/app/GlobalRedux/features/login/loginSlice"
-import { useEffect } from "react"
 
 export default function CartProducts() {
-    const test = useSelector((state)=> state.login.test)
     const cart = useSelector((state)=> state.login.connectedUser.cart)
     const dispatch = useDispatch()
 
-    useEffect(()=>{
-        console.log(cart);
-    },[cart])
 
     return(
         <div className="cartProducts">

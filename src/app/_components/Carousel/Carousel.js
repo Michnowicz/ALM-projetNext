@@ -33,12 +33,6 @@ export default function Carousel() {
         router.push(`/products/${id}`)
     }
 
-    // useEffect(()=>{
-    //     if (data.carousel != "") {
-    //         console.log(data.carousel);
-    //     }
-    // },[data.carousel])
-
 
     return(
         <div className="Carousel">

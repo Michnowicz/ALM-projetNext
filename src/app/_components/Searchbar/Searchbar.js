@@ -2,12 +2,10 @@ import "./Searchbar.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addSearch, setFilter } from "@/app/GlobalRedux/features/search/searchSlice"
-import { useEffect, useState } from "react"
 
 export default function Searchbar() {
-    const search = useSelector((state)=> state.search)
     const dispatch = useDispatch()
 
     return(

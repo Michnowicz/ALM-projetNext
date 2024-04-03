@@ -59,14 +59,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px;
+    /* padding: 6px; */
     background-color: #b4b4b4;
     border-radius: 25px;
     cursor: pointer;
     gap: 10px;
+    position: relative;
 }
 .user .avatar {
     height: 35px;
+    margin: 5px;
     aspect-ratio: 1/1;
     background-color: rgb(37, 37, 37);
     border-radius: 50%;
@@ -86,4 +88,11 @@
 }
 .triangle svg {
     height: 12px;
+}
+
+
+.scrollingMenu {
+    position: absolute;
+    width: 100%;
+    height: 40px;
 }

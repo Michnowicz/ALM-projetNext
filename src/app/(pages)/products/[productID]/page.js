@@ -50,14 +50,6 @@ export default function ProductDetails({params}) {
     }, [data.accesToken])
 
 
-    // useEffect(()=>{
-    //     if (data.album != "") {
-    //         //console.log(data.album);
-    //         console.log(data.album.tracks.items);
-    //     }
-    // },[data.album])
-
-
     return(
         <div className="ProductDetails">
             {

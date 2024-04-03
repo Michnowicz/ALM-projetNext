@@ -12,8 +12,6 @@ export default function Favorite() {
     const router = useRouter()
 
 
-    
-
     return(
         <section className="Favorite">
             <div className="favDiv">
