@@ -3,7 +3,7 @@ import "./ProductInfo.css"
 import { useSelector, useDispatch } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping,faStar } from "@fortawesome/free-solid-svg-icons"
-import { addToCart } from "@/app/GlobalRedux/features/login/loginSlice"
+import { addToCart, addFavorite } from "@/app/GlobalRedux/features/login/loginSlice"
 import { useEffect } from "react"
 
 export default function ProductInfo() {
@@ -12,7 +12,6 @@ export default function ProductInfo() {
     const dispatch = useDispatch()
 
     function handleCart() {
-        console.log(album);
         dispatch(addToCart(album))
     }
 
@@ -34,7 +33,7 @@ export default function ProductInfo() {
                     login.logged ?
                     <div className="productIcons">
                         <FontAwesomeIcon icon={faCartShopping} className="icon" onClick={handleCart}/>
-                        <FontAwesomeIcon icon={faStar} className="icon"/>
+                        <FontAwesomeIcon icon={faStar} className="icon" onClick={()=>(dispatch(addFavorite(album)))}/>
                     </div>
                     :
                     <></>

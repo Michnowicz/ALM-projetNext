@@ -10,25 +10,25 @@ export const loginSlice = createSlice ({
         //logged: false,
         logged: true,
         //connectedUser:{id:null, name: "", password: "", favorite: [], cart: []},
-        connectedUser:{id:null, name: "", password: "", favorite: [], cart: [
-            {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{url:"https://i.scdn.co/image/ab67616d0000485181fccd758776d16b87721b17"}],}, quantity: 6},
+        connectedUser:{id:null, name: "", password: "", favorite: [
+            {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{url:"https://i.scdn.co/image/ab67616d0000485181fccd758776d16b87721b17"}]},
 
-            {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{url:"https://i.scdn.co/image/ab67616d000048512a53db5b9ceb3a0d5830fb3c"}],}, quantity: 4},
+            {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{url:"https://i.scdn.co/image/ab67616d000048512a53db5b9ceb3a0d5830fb3c"}]},
             
-            {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{url:"https://i.scdn.co/image/ab67616d00004851b36949bee43217351961ffbc"}],}, quantity: 3},
-        ]},
+            {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{url:"https://i.scdn.co/image/ab67616d00004851b36949bee43217351961ffbc"}]}
+        ], cart: []},
         users:[
             {id:0, name:"dummy", password: "test", favorite: [], cart: []},
         ],
 
         // to test favorite and cart
-        test: [
-            {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{url:"https://i.scdn.co/image/ab67616d0000485181fccd758776d16b87721b17"}],}, quantity: 6},
+        // test: [
+        //     {object: {name: "Red Moon In Venus", artists:[{name: 'Kali Uchis'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b27381fccd758776d16b87721b17"},{},{url:"https://i.scdn.co/image/ab67616d0000485181fccd758776d16b87721b17"}],}, quantity: 6},
 
-            {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{url:"https://i.scdn.co/image/ab67616d000048512a53db5b9ceb3a0d5830fb3c"}],}, quantity: 4},
+        //     {object: {name: "Phrases", artists:[{name: 'TOPAZ'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b2732a53db5b9ceb3a0d5830fb3c"},{},{url:"https://i.scdn.co/image/ab67616d000048512a53db5b9ceb3a0d5830fb3c"}],}, quantity: 4},
             
-            {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{url:"https://i.scdn.co/image/ab67616d00004851b36949bee43217351961ffbc"}],}, quantity: 3},
-        ],
+        //     {object: {name: "What's Going On", artists:[{name: 'Marvin Gaye'}] , images: [{url:"https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc"},{},{url:"https://i.scdn.co/image/ab67616d00004851b36949bee43217351961ffbc"}],}, quantity: 3},
+        // ],
     },
     reducers: {
         CheckUser: (state, action) => {
@@ -99,8 +99,26 @@ export const loginSlice = createSlice ({
         deleteCart:(state, action) => {
             state.connectedUser.cart.splice(action.payload, 1)
         },
+        addFavorite: (state, action) => {
+            const newFavorite = action.payload
+            let writeFavorite = true
+            
+            if (state.connectedUser.favorite.length == 0) {
+                state.connectedUser.favorite.push(newFavorite)
+            } else {
+                for (let i = 0; i < state.connectedUser.favorite.length; i++) {
+                    if (state.connectedUser.favorite[i].name == newFavorite.name) {
+                        writeFavorite = false
+                        state.connectedUser.favorite.splice(i, 1)
+                    }
+                }
+                if (writeFavorite == true) {
+                    state.connectedUser.favorite.push(newFavorite)
+                }
+            }
+        }
     }
 })
 
-export const {CheckUser, CreateUser, addToCart, incrementCart, decrementCart, deleteCart, } = loginSlice.actions
+export const {CheckUser, CreateUser, addToCart, incrementCart, decrementCart, deleteCart, addFavorite} = loginSlice.actions
 export default loginSlice.reducer

@@ -38,7 +38,8 @@ export default function CartProducts() {
                         <button onClick={()=>{dispatch(deleteCart(i))}}><FontAwesomeIcon icon={faTrash} className="icon"/></button>
                     </div>
                 </div>
-                {i < test.length - 1 ?
+                {
+                i < cart.length - 1 ?
                     <hr />
                     :
                     ""

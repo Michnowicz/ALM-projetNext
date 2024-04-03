@@ -1,0 +1,36 @@
+
+.Favorites {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data {
+    padding: 10px;
+    border-radius: 10px;
+    width: 170px;
+    height: 220px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.data:hover {
+    background-color: #dfe1e2;
+}
+.data img {
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+}
+.data p:nth-of-type(1) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    font-weight: 600;
+    color: black;
+}
+.data p:nth-of-type(2) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    font-size: 0.9rem;
+    color: #666565;
+}
