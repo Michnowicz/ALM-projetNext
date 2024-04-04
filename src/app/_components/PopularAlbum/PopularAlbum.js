@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation"
 
 export default function PopularAlbum() {
     const data = useSelector((state)=> state.data)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const dispatch = useDispatch()
     const router = useRouter()
 
@@ -54,7 +55,7 @@ export default function PopularAlbum() {
     }
 
     return(
-        <div className="PopularAlbum">
+        <div className={darkMode ? "PopularAlbum dark" : "PopularAlbum"}>
             <h2>Most Popular Album</h2>
             <div className="allData">
                 {

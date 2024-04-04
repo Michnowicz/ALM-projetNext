@@ -14,6 +14,7 @@ export const loginSlice = createSlice ({
         users:[
             {id:0, name:"dummy", password: "test", favorite: [], cart: []},
         ],
+        darkMode: false,
     },
     reducers: {
         CheckUser: (state, action) => {
@@ -101,9 +102,16 @@ export const loginSlice = createSlice ({
                     state.connectedUser.favorite.push(newFavorite)
                 }
             }
-        }
+        },
+        changeMode: (state) => {
+            state.darkMode = !state.darkMode
+        },
+        logout: (state) => {
+            state.logged = false
+            state.connectedUser = {id:null, name: "", password: "", favorite: [], cart: []}
+        },
     }
 })
 
-export const {CheckUser, CreateUser, addToCart, incrementCart, decrementCart, deleteCart, addFavorite} = loginSlice.actions
+export const {CheckUser, CreateUser, addToCart, incrementCart, decrementCart, deleteCart, addFavorite, changeMode, logout} = loginSlice.actions
 export default loginSlice.reducer

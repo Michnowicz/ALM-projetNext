@@ -11,11 +11,15 @@ section {
   padding-top: 80px;
 }
 
+
 .bgGrey {
   width: 100vw;
-  /* padding: 10%; */
   box-sizing: border-box;
   background-color: #F5F6F7;
+}
+.bgDark {
+  background-color: #040a10;
+  color: #ffffff !important;
 }
 
 
@@ -49,3 +53,8 @@ section {
 .btnBlue:active {
   background-color: #284354;
 }
+
+
+
+
+

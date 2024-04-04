@@ -1,3 +1,4 @@
+"use client"
 import "./Footer.css"
 
 import Link from "next/link"
@@ -5,12 +6,14 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXTwitter, faFacebook, faSpotify, faSoundcloud } from "@fortawesome/free-brands-svg-icons"
 
-export default function Footer() {
+import { useSelector } from "react-redux"
 
+export default function Footer() {
+    const darkMode = useSelector((state) => state.login.darkMode)
 
 
     return(
-        <div className="Footer">
+        <div className={darkMode ? "Footer dark" : "Footer"}>
             <div className="ftrCont About">
                 <p><b>About us</b></p>
                 <div>

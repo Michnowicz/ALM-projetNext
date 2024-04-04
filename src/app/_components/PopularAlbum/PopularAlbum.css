@@ -15,3 +15,13 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+
+
+
+.dark h2  {
+    color: white;
+}
+.PopularAlbum.dark .data p:first-of-type  {
+    color: white;
+}

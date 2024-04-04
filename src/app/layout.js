@@ -4,6 +4,7 @@ import Navbar from "./_components/Navbar/Navbar.js";
 import Footer from "./_components/Footer/Footer";
 import { Providers } from "./GlobalRedux/provider";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,6 +13,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       

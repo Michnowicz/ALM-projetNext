@@ -50,3 +50,15 @@
 .socialIcon svg {
     height: 1.2rem;
 }
+
+
+
+.Footer.dark {
+    background-color: #223548;
+}
+.Footer.dark b {
+    color: white;
+}
+.Footer.dark a, .Footer.dark p {
+    color: rgb(213, 213, 213);
+}
