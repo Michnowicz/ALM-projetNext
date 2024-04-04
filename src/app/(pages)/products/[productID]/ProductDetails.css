@@ -21,3 +21,19 @@
     gap: 40px;
     box-shadow: 1px 1px 5px #e7e9eb;
 }
+
+
+
+.ProductDetails.dark {
+    background-color: #040a10;
+}
+.ProductDetails.dark .loading {
+    color: white;
+}
+.ProductDetails.dark .product {
+    background-color: #223548;
+    box-shadow: 1px 1px 5px #2f455b;
+}
+.ProductDetails.dark .loading {
+    color: white;
+}

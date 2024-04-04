@@ -40,3 +40,12 @@
     font-size: 0.925rem;
     padding: 8px;
 }
+
+
+
+.AlbumList.dark h2, .AlbumList.dark p {
+    color: white;
+}
+.AlbumList.dark .album {
+    background-color: #2f455b;
+}

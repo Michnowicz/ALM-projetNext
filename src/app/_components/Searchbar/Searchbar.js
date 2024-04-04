@@ -2,14 +2,15 @@ import "./Searchbar.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { addSearch, setFilter } from "@/app/GlobalRedux/features/search/searchSlice"
 
 export default function Searchbar() {
     const dispatch = useDispatch()
+    const darkMode = useSelector((state)=> state.login.darkMode)
 
     return(
-        <div className="Searchbar">
+        <div className={darkMode ? "Searchbar dark" :"Searchbar"}>
             <div className="search">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                 <input type="text" placeholder="search" onChange={(e)=>(dispatch(addSearch(e.target.value)))} />

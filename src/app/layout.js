@@ -22,8 +22,8 @@ export default function RootLayout({ children }) {
           <Navbar/>
           <main className="bgGrey">
             {children}
-          </main>
           <Footer/>
+          </main>
         </Providers>
       </body>
     </html>

@@ -3,20 +3,22 @@
 import "./Favorites.css"
 
 import { useSelector } from "react-redux"
+import { useRouter } from "next/navigation"
 
 export default function Favorites() {
     const favorite = useSelector((state) => state.login.connectedUser.favorite)
+    const darkMode = useSelector((state) => state.login.darkMode)
 
 
     return(
-        <div className="Favorites">
+        <div className={darkMode ? "Favorites dark" : "Favorites"}>
             {
-                favorite.map((c, i) => (
+                favorite.map((f, i) => (
                     <div key={i} className="favorite">
                         <div key={i} className="data">
-                            <img src={c.images[0].url} alt=""/>
-                            <p>{c.name}</p>
-                            <p>{c.artists[0].name}</p>
+                            <img src={f.images[0].url} alt=""/>
+                            <p>{f.name}</p>
+                            <p>{f.artists[0].name}</p>
                         </div>
                     </div>
                 ))

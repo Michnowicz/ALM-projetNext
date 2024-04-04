@@ -3,6 +3,13 @@ body, h1, h2, h3,h4,h5,h6, p, hr, a {
   color: #223548;
 }
 
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 a {
   text-decoration: none;
 }
@@ -43,7 +50,7 @@ section {
   border: none;
   padding: 8px;
   border-radius: 25px;
-  color: white !important;
+  color: white;
   font-weight: 500px;
   cursor: pointer;
 }
@@ -54,7 +61,13 @@ section {
   background-color: #284354;
 }
 
-
+.dark .btnBlue  {
+  background-color: white;
+  color: #223548;
+}
+.dark .btnBlue:active {
+  background-color: rgb(234, 234, 234) !important;
+}
 
 
 

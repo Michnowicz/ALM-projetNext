@@ -32,3 +32,14 @@
 .sumBtn button:active {
     background-color: #284354;
 }
+
+.summary.dark p, .summary.dark b {
+    color: white;
+}
+.summary.dark button {
+    background-color: white;
+    color: #223548;
+}
+.dark .btnBlue:active {
+    background-color: rgb(234, 234, 234) !important;
+}

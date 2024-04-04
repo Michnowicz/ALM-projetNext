@@ -9,6 +9,7 @@ import { CreateUser } from "@/app/GlobalRedux/features/login/loginSlice";
 
 export default function Registration () {
     const login = useSelector((state) => state.login)
+    const darkMode = useSelector((state) => state.login.darkMode)
     const dispatch = useDispatch()
     const router = useRouter()
 
@@ -24,7 +25,7 @@ export default function Registration () {
     }
 
     return(
-        <section className="Registration">
+        <section className={darkMode? "Registration dark" : "Registration"}>
             <div className="SignUp">
                 <h1>Sign Up</h1>
                 <div className="LogInputs">

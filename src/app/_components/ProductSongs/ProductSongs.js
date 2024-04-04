@@ -5,9 +5,10 @@ import { useSelector } from "react-redux"
 
 export default function ProductSongs() {
     const album = useSelector((state)=> state.data.album)
+    const darkMode = useSelector((state)=> state.login.darkMode)
 
     return(
-        <div className="productSongs">
+        <div className={darkMode ? "productSongs dark" :"productSongs"}>
                         <div className="songsTitle">
                             <h2>Tracklist</h2>
                         </div>

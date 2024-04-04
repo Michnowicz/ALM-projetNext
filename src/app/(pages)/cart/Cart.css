@@ -5,8 +5,8 @@
     padding: 5%;
     padding-top: 120px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    min-height: 70vh;
 }
 .cartDiv {
     background-color: white;
@@ -42,4 +42,16 @@
 
 .btnBlue:focus {
     outline: 1px solid #b6c7da
+}
+
+
+.Cart.dark {
+    background-color: #040a10;
+}
+.Cart.dark .cartDiv {
+    background-color: #223548;
+    box-shadow: 1px 1px 5px #2f455b;
+}
+.Cart.dark p, .Cart.dark h3 {
+    color: white;
 }

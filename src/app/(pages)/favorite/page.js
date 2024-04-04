@@ -4,6 +4,7 @@ import "./Favorite.css"
 import Favorites from "@/app/_components/Favorites/Favorites"
 
 import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 import { useSelector } from "react-redux"
 
@@ -12,8 +13,12 @@ export default function Favorite() {
     const router = useRouter()
 
 
+    // useEffect(()=>{
+    //     console.log(login.connectedUser.favorite);
+    // },[login.connectedUser.favorite])
+
     return(
-        <section className="Favorite">
+        <section className={login.darkMode ? "Favorite dark" : "Favorite"}>
             <div className="favDiv">
                 {
                     login.logged ?

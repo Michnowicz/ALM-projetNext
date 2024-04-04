@@ -6,6 +6,7 @@ import { useSelector } from "react-redux"
 
 export default function AlbumList() {
     const data = useSelector((state)=> state.data)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const [albums, setAlbums] = useState([])
 
 
@@ -30,7 +31,7 @@ export default function AlbumList() {
 
 
     return(
-        <div className="AlbumList">
+        <div className={darkMode? "AlbumList dark" :"AlbumList"}>
                         <div className="albumsTitle">
                             <h2>other albums</h2>
 

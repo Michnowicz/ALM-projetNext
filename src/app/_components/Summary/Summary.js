@@ -1,13 +1,13 @@
 "use client"
 
 import "./Summary.css"
-
+import { useSelector } from "react-redux"
 
 export default function Summary() {
-    
+    const darkMode = useSelector((state)=> state.login.darkMode)
 
     return(
-        <div className="summary">
+        <div className={darkMode ? "summary dark" : "summary"}>
             <div className="sumDiv">
                 <div className="sumText">
                     <b>Delivery : </b>

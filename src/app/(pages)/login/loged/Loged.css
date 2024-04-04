@@ -11,3 +11,10 @@
     padding-top: 80px;
     box-sizing: border-box;
 }
+
+.Loged.dark {
+    background-color: #040a10;
+}
+.Loged.dark h1 {
+    color: white;
+}

@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 export default function Products() {
     const data = useSelector((state)=> state.data)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const dispatch = useDispatch()
 
 
@@ -46,7 +47,7 @@ export default function Products() {
     }, [data.accesToken])
 
     return(
-        <div className="Products">
+        <div className={darkMode ? "Products bgDark" :"Products"}>
             {
                 data.playlist == "" ?
                 <div className="load">Loading...</div>

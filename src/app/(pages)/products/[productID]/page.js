@@ -12,6 +12,7 @@ import { getToken, getAlbum } from "@/app/GlobalRedux/features/data/dataSlice"
 
 export default function ProductDetails({params}) {
     const data = useSelector((state)=> state.data)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const dispatch = useDispatch()
 
 
@@ -51,7 +52,7 @@ export default function ProductDetails({params}) {
 
 
     return(
-        <div className="ProductDetails">
+        <div className={darkMode ? "ProductDetails dark"  :"ProductDetails"}>
             {
                 data.album == "" ?
                 <div className="loading">loading...</div>

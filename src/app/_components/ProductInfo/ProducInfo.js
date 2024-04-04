@@ -8,6 +8,7 @@ import { addToCart, addFavorite } from "@/app/GlobalRedux/features/login/loginSl
 export default function ProductInfo() {
     const login = useSelector((state)=> state.login)
     const album = useSelector((state)=> state.data.album)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const dispatch = useDispatch()
 
     function handleCart() {
@@ -20,7 +21,7 @@ export default function ProductInfo() {
     }
 
     return(
-        <div className="productInfo">
+        <div className={darkMode? "productInfo dark" :"productInfo"}>
             <img src={album.images[0].url} alt="" />
             <div className="productInfoText">
                 <div className="productTitle">

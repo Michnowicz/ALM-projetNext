@@ -50,5 +50,14 @@
 
 
 .gold {
-    color: #FFD700;
+    color: #FFD700 !important;
+}
+
+
+
+.dark.productInfo h1, .dark.productInfo p, .dark.productInfo svg {
+    color: white;
+}
+.dark.productInfo .productIcons .icon:hover {
+    background-color: #2f455b;
 }

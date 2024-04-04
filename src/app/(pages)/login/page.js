@@ -11,6 +11,7 @@ import { useState } from "react"
 
 export default function Login() {
     const login = useSelector((state) => state.login)
+    const darkMode = useSelector((state) => state.login.darkMode)
     const dispatch = useDispatch()
     const router = useRouter()
 
@@ -25,7 +26,7 @@ export default function Login() {
     }
 
     return(
-        <section className="Login">
+        <section className={darkMode? "Login dark" : "Login"}>
             <div className="logDiv">
                 <div className="LogInDiv">
                     <h1>Login</h1>

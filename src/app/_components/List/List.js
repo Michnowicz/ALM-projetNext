@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation"
 export default function List() {
     const data = useSelector((state)=> state.data)
     const search = useSelector((state)=> state.search)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const router = useRouter()
 
 
@@ -17,7 +18,7 @@ export default function List() {
     }
 
     return(
-        <div className="List">
+        <div className={darkMode? "List dark" : "List"}>
             {
                 search.filter == "artist"?
                 data.playlist.filter(p => p.track.artists[0].name.toLowerCase().includes(search.search)).map((p,i) => (

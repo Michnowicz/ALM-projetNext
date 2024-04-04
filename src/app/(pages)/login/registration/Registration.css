@@ -32,3 +32,21 @@
 .LogInBtn {
     width: 100%;
 }
+
+
+
+.Registration.dark {
+    background-color: #040a10;
+}
+.Registration.dark .SignUp {
+    background-color: #223548;
+    box-shadow: 1px 1px 5px #2f455b;
+}
+.Registration.dark h1 {
+    color: white;
+}
+.Registration.dark input {
+    background-color: #223548;
+    color: white;
+    border: 2px solid #ffffff6c;
+}

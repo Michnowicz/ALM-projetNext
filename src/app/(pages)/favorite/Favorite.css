@@ -2,8 +2,8 @@
     padding: 5%;
     padding-top: 120px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    min-height: 70vh;
 }
 
 .favDiv {
@@ -33,4 +33,13 @@
     color: white !important;
     font-weight: 500px;
     cursor: pointer;
+}
+
+
+.Favorite.dark {
+    background-color: #040a10;
+}
+.Favorite.dark .favDiv {
+    background-color: #223548;
+    box-shadow: 1px 1px 5px #2f455b;
 }

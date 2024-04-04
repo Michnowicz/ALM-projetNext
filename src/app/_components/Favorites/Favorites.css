@@ -34,3 +34,14 @@
     font-size: 0.9rem;
     color: #666565;
 }
+
+
+.Favorites.dark .data p:first-of-type {
+    color: white;
+}
+.Favorites.dark .data p:last-of-type {
+    color: #666565;
+}
+.Favorites.dark .data:hover {
+    background-color: #2f455b;
+}

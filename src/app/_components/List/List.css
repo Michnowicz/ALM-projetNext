@@ -51,3 +51,15 @@
     font-size: 0.9rem;
     color: #666565;
 }
+
+
+
+.dark .data:hover {
+    background-color: #223548;
+}
+.dark .data p:first-of-type {
+    color: white;
+}
+.dark .data p:last-of-type {
+    color: #666565;
+}

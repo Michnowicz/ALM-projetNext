@@ -30,3 +30,8 @@
     overflow: hidden;
     text-wrap: nowrap;
 }
+
+
+.productSongs.dark h2, .productSongs.dark p {
+    color: white;
+}

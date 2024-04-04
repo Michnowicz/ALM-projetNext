@@ -8,12 +8,13 @@ import { useRouter } from "next/navigation"
 
 export default function Cart() {
     const login = useSelector((state)=> state.login)
+    const darkMode = useSelector((state)=> state.login.darkMode)
     const router = useRouter()
 
 
 
     return(
-        <section className="Cart">
+        <section className={darkMode ? "Cart dark" : "Cart"}>
             <div className="cartDiv">
                 {
                     login.logged ?

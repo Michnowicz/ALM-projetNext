@@ -5,3 +5,7 @@
     padding-top: 80px;
     box-sizing: border-box;
 }
+
+.Products.bgDark {
+    color: white;
+}
