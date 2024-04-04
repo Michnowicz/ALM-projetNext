@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { changeMode, logout } from "@/app/GlobalRedux/features/login/loginSlice"
 import { useEffect, useState } from "react"
 
+
 export default function Navbar() {
     const login = useSelector((state) => state.login)
     const darkMode = useSelector((state) => state.login.darkMode)
@@ -24,7 +25,9 @@ export default function Navbar() {
     return(
         <nav className={darkMode ? "navBar dark" : "navBar"}>
             <div className="logoDiv">
-                <img src="" alt="logo"/>
+                <div>
+                    <img src={"/image/musicRest.png"}/>
+                </div>
             </div>
             <div className="navigation">
                 <div className="links">

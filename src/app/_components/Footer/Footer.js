@@ -30,9 +30,9 @@ export default function Footer() {
             <div className="ftrCont Links">
                 <p><b>Links</b></p>
                 <div>
-                    <Link href="/">Links</Link>
-                    <Link href="/">link</Link>
-                    <Link href="/">link</Link>
+                    <Link href="/">lorem</Link>
+                    <Link href="/">ipsum</Link>
+                    <Link href="/">nodade</Link>
                 </div>
             </div>
             <div className="ftrCont Social">
