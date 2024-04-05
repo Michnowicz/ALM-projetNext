@@ -38,6 +38,7 @@
 }
 
 .carText {
+    display: none;
     position: absolute;
     padding: 20px;
     box-sizing: border-box;

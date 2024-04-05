@@ -50,6 +50,12 @@ export default function ProductDetails({params}) {
         }
     }, [data.accesToken])
 
+    useEffect(()=>{
+        if (data.album != "") {
+            console.log(data.album);
+        }
+    },[data.album])
+
 
     return(
         <div className={darkMode ? "ProductDetails dark"  :"ProductDetails"}>

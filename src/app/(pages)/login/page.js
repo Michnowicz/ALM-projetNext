@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { useSelector, useDispatch } from 'react-redux'
 import { CheckUser } from "../../GlobalRedux/features/login/loginSlice.js"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export default function Login() {
@@ -37,12 +37,15 @@ export default function Login() {
                             className="pillInput" 
                             onChange={(e)=>(setUsername(e.target.value))}
                         />
-                        <input 
-                            type="password" 
-                            placeholder="password" 
-                            className="pillInput"
-                            onChange={(e)=>(setPassword(e.target.value))}
-                        />
+                        <div>
+                            <input 
+                                type="password" 
+                                placeholder="password" 
+                                className="pillInput"
+                                onChange={(e)=>(setPassword(e.target.value))}
+                            />
+                            <p>{login.loginError}</p>
+                        </div>
                     </div>
                     <div className="LogInBtn" onClick={handleLogin}>
                         <button className="btnBlue">Login</button>

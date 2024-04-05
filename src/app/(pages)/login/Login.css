@@ -37,6 +37,12 @@
     flex-direction: column;
     gap: 24px;
 }
+.LogInputs p {
+    font-size: 0.9rem;
+    color: rgb(255, 47, 47);
+    width: 200px;
+    margin-top: 6px;
+}
 .LogInBtn {
     display: flex;
     justify-content: center;

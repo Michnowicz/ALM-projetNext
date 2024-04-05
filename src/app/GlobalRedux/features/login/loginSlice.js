@@ -23,6 +23,8 @@ export const loginSlice = createSlice ({
             {id:0, name:"dummy", password: "test", favorite: [], cart: []},
         ],
         darkMode: false,
+        loginError:"",
+        registerError:["","",""],
     },
     reducers: {
         CheckUser: (state, action) => {
@@ -33,33 +35,60 @@ export const loginSlice = createSlice ({
                     state.connectedUser.password = user.password
 
                     state.logged = true
+                } else {
+                    state.loginError = "The username or password you entered is incorrect."
                 }
             });
         },
         CreateUser: (state, action) => {
             let writeNewUser = true
+            state.registerError = ["","",""]
 
-            if (action.payload[1] == action.payload[2]) {
-                if (action.payload[0] === "" || action.payload[1] === "" || action.payload[2] === "") {
-                    console.log('nok');
-                } else {
-                    state.users.forEach(user => {
-                        if (user.name == action.payload[0]) {
-                            writeNewUser = false
-                            console.log("username already taken");
-                        }
-                    });
-                    if (writeNewUser) {
-                        console.log('new user written');
-                        const newUser = {id: state.users.length, name: action.payload[0], password: action.payload[1], favorite: [], cart: []}
-                        state.users.push(newUser)
-                        state.logged = true
-                        state.connectedUser.id = newUser.id
-                        state.connectedUser.name = newUser.name
-                        state.connectedUser.password = newUser.password
+            // if (action.payload[1] == action.payload[2]) {
+            //     if (action.payload[0] === "" || action.payload[1] === "" || action.payload[2] === "") {
+            //         console.log('nok');
+            //     } else {
+            //         state.users.forEach(user => {
+            //             if (user.name == action.payload[0]) {
+            //                 writeNewUser = false
+            //                 state.registerError[0] = "Username already taken"
+            //             }
+            //         });
+            //         if (writeNewUser) {
+            //             console.log('new user written');
+            //             const newUser = {id: state.users.length, name: action.payload[0], password: action.payload[1], favorite: [], cart: []}
+            //             state.users.push(newUser)
+            //             state.logged = true
+            //             state.connectedUser.id = newUser.id
+            //             state.connectedUser.name = newUser.name
+            //             state.connectedUser.password = newUser.password
+            //         }
+            //     }
+            // }
+
+                state.users.forEach(user => {
+                    if (user.name == action.payload[0]) {
+                        writeNewUser = false
+                        state.registerError[0] = "Username already taken"
                     }
+                });
+                if (action.payload[1].length < 4) {
+                    writeNewUser = false
+                    state.registerError[1] = "The password has to be at least 4 characters"
                 }
-            }
+                if (action.payload[1] != action.payload[2]) {
+                    writeNewUser = false
+                    state.registerError[2] = "The repeated password is incorrect"
+                }
+                if (writeNewUser) {
+                    console.log('new user written');
+                    const newUser = {id: state.users.length, name: action.payload[0], password: action.payload[1], favorite: [], cart: []}
+                    state.users.push(newUser)
+                    state.logged = true
+                    state.connectedUser.id = newUser.id
+                    state.connectedUser.name = newUser.name
+                    state.connectedUser.password = newUser.password
+                }
         },
         addToCart: (state, action) => {
             const newProduct = {object: action.payload, quantity: 1}
