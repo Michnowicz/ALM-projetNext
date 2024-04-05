@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Products.css";
 import Searchbar from "@/app/_components/Searchbar/Searchbar";
 import List from "@/app/_components/List/List"
 import { getToken, getPlaylist } from "@/app/GlobalRedux/features/data/dataSlice";
+import { addSearch } from "@/app/GlobalRedux/features/search/searchSlice";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -12,6 +13,9 @@ export default function Products() {
     const data = useSelector((state)=> state.data)
     const darkMode = useSelector((state)=> state.login.darkMode)
     const dispatch = useDispatch()
+
+
+    const [search, setSearch] = useState('')
 
 
     useEffect(()=>{ //API parameters
@@ -46,6 +50,7 @@ export default function Products() {
         }
     }, [data.accesToken])
 
+
     return(
         <div className={darkMode ? "Products bgDark" :"Products"}>
             {
@@ -53,8 +58,8 @@ export default function Products() {
                 <div className="load">Loading...</div>
                 :
                 <>
-                    <Searchbar/>
-                    <List/>
+                    <Searchbar search={search} setSearch={setSearch} />
+                    <List search={search} setSearch={setSearch}/>
                 </>
                 }
         </div>

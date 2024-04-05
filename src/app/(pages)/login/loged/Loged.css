@@ -10,6 +10,8 @@
     align-items: center;
     padding-top: 80px;
     box-sizing: border-box;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .Loged.dark {
@@ -17,4 +19,9 @@
 }
 .Loged.dark h1 {
     color: white;
+}
+
+
+.Loged button {
+    padding: 6px 40px 6px 40px;
 }

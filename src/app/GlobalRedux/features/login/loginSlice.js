@@ -50,6 +50,10 @@ export const loginSlice = createSlice ({
                         state.registerError[0] = "Username already taken"
                     }
                 });
+                if (action.payload[0].length < 4) {
+                    writeNewUser = false
+                    state.registerError[0] = "Username has to be at least 4 characters"
+                }
                 if (action.payload[1].length < 4) {
                     writeNewUser = false
                     state.registerError[1] = "The password has to be at least 4 characters"

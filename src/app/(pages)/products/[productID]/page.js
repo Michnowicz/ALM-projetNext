@@ -17,6 +17,7 @@ export default function ProductDetails({params}) {
 
 
 
+
     useEffect(()=>{ //API parameters
         let authParameters = {
             method: 'POST',
