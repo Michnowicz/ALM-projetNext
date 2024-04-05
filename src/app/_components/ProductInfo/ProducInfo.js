@@ -40,7 +40,7 @@ export default function ProductInfo() {
                             <div className="productIcons">
                                 <div className="play">
                                     <Link href={album.external_urls.spotify} target="_blank" >
-                                        <FontAwesomeIcon icon={faPlay} className="icon"/>
+                                        <FontAwesomeIcon icon={faPlay}/>
                                     </Link>
                                 </div>
                                 <FontAwesomeIcon icon={faCartShopping} className="icon" onClick={handleCart}/>

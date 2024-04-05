@@ -5,7 +5,10 @@
     padding: 5%;
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
     gap: 20px;
+    width: 100%;
 }
 
 .Footer .ftrCont {
@@ -15,16 +18,20 @@
     padding: 10px;
 }
 .Footer .About {
-    width: 40%;
+    width: 35%;
+    box-sizing: border-box;
 }
 .Footer .Support {
     width: 20%;
+    box-sizing: border-box;
 }
 .Footer .Links {
     width: 20%;
+    box-sizing: border-box;
 }
 .Footer .Social {
-    width: 20%;
+    width: fit-content;
+    box-sizing: border-box;
 }
 
 

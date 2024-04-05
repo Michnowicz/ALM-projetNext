@@ -4,6 +4,7 @@
     padding: 5%;
     padding-top: 80px;
     box-sizing: border-box;
+    min-height: 75vh;
 }
 
 .Products.bgDark {

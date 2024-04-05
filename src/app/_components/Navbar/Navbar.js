@@ -16,11 +16,15 @@ export default function Navbar() {
     const dispatch = useDispatch()
 
     const [slide, setSlide] = useState(false)
+    const [path, setPath] =useState('')
 
     function handleSlide() {
         dispatch(changeMode())
         setSlide(!slide)
     }
+
+    
+
 
     return(
         <nav className={darkMode ? "navBar dark" : "navBar"}>

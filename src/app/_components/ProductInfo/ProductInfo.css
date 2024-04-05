@@ -77,6 +77,9 @@
     cursor: pointer;
     background-color: #dfe1e2;
 }
+.dark .productIcons .play:hover {
+    background-color: #2f455b;
+}
 .play svg {
     height: 30px;
 }

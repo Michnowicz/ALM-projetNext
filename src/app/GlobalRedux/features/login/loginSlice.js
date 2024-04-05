@@ -44,28 +44,6 @@ export const loginSlice = createSlice ({
             let writeNewUser = true
             state.registerError = ["","",""]
 
-            // if (action.payload[1] == action.payload[2]) {
-            //     if (action.payload[0] === "" || action.payload[1] === "" || action.payload[2] === "") {
-            //         console.log('nok');
-            //     } else {
-            //         state.users.forEach(user => {
-            //             if (user.name == action.payload[0]) {
-            //                 writeNewUser = false
-            //                 state.registerError[0] = "Username already taken"
-            //             }
-            //         });
-            //         if (writeNewUser) {
-            //             console.log('new user written');
-            //             const newUser = {id: state.users.length, name: action.payload[0], password: action.payload[1], favorite: [], cart: []}
-            //             state.users.push(newUser)
-            //             state.logged = true
-            //             state.connectedUser.id = newUser.id
-            //             state.connectedUser.name = newUser.name
-            //             state.connectedUser.password = newUser.password
-            //         }
-            //     }
-            // }
-
                 state.users.forEach(user => {
                     if (user.name == action.payload[0]) {
                         writeNewUser = false
